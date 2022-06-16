@@ -1,0 +1,105 @@
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00C0FF), to(#4e19dd));
+  background-image: linear-gradient(to bottom, #00C0FF, #4e19dd);
+}
+body section#search {
+  height: 20vh;
+  margin-bottom: 5%;
+}
+body section#search form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #4a3c71;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+body section#search form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  height: 40%;
+  background-color: #e8f0fe;
+  margin: auto;
+  border-radius: 10px;
+}
+body section#search form div input#input {
+  width: 100%;
+  height: 94%;
+  border-radius: 10px;
+  border: none;
+  padding-left: 5px;
+  color: rgb(34, 34, 34);
+  background: rgba(106, 106, 106, 0);
+}
+body section#search form div input#input:focus {
+  border: none;
+  outline: none;
+}
+body section#search form div#button {
+  border-radius: 10px;
+  width: 50px;
+  border-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 10px;
+  position: relative;
+}
+body section#search form div#button i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+body section#display {
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body section#display div {
+  width: 100%;
+  text-align: center;
+}
+body section#display div#degre {
+  width: 60%;
+}
+body section#display div#degre span#temp {
+  color: white;
+  text-shadow: 2px 2px 3px rgb(70, 70, 70);
+  font-size: 80px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
+}
+body section#display div#visuel {
+  width: 40%;
+}
+body section#display div#visuel span#weatherDescription {
+  color: white;
+  text-shadow: 2px 2px 3px rgb(70, 70, 70);
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+body section#info {
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body section#info span {
+  color: white;
+  margin-left: 5%;
+  font-family: "Quicksand", sans-serif;
+}
+body section#forecast {
+  height: 60vh;
+}/*# sourceMappingURL=style.css.map */

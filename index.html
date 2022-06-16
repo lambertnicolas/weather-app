@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/14a8cc1138.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="src/css/reset.css" />
+    <link rel="stylesheet" href="src/css/style.min.css" />
+    <title>Weather App</title>
+</head>
+<body>
+    <section id="search">      
+            <form>
+                <div id="searchBar">
+                    <div id="button"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                    <input type="text" id="input" name="input" value="" placeholder="Rechercher une ville">
+                </div>
+            </form>
+    </section>
+    <main>
+        <section id="display">
+            <div id="degre">
+                <span id="temp"></span>            
+            </div>
+            <div id="visuel">
+                <div id="icon"></div>
+                <span id="weatherDescription"></span>
+            </div>
+        </section>
+        <section id="info">
+            <span id="feel_like"></span>
+            <span id="humidity"></span>
+            <span id="wind"></span>
+        </section>
+        <section id="forecast">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
