@@ -12,15 +12,15 @@
     <title>Weather App</title>
 </head>
 <body>
-    <section id="search">      
-            <form>
-                <div id="searchBar">
-                    <div id="button"><i class="fa-solid fa-magnifying-glass-location"></i></div>
-                    <input type="text" id="input" name="input" value="" placeholder="Rechercher une ville">
-                </div>
-            </form>
-    </section>
     <main>
+        <section id="search">      
+                <form>
+                    <div id="searchBar">
+                        <div id="button"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <input type="text" id="input" name="input" value="" placeholder="Rechercher une ville">
+                    </div>
+                </form>
+        </section> 
         <section id="display">
             <div id="degre">
                 <span id="temp"></span>            
@@ -36,8 +36,46 @@
             <span id="wind"></span>
         </section>
         <section id="forecast">
+            <div id="start">
+                <h1>Bienvenue sur WeatherApp</h1>
+                <p>Commencez dès maintenant, entrez le nom d'une ville !</p>
+            </div>
+                <table>
+                    <tr id="th">
+                        <td></td>
+                        <td></td>
+                        <td id="hours">
+                            <div>9h</div>
+                            <div>12h</div>
+                            <div>18h</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="minmax1"></td>
+                        <td id="icones1"></td>
+                    </tr>
+                    <tr>
+                        <td id="day2"></td>
+                        <td id="minmax2"></td>
+                        <td id="icones2"></td>
+                    </tr>
+                    <tr>
+                        <td id="day3"></td>
+                        <td id="minmax3"></td>
+                        <td id="icones3"></td>
+                    </tr>
+                    <tr>
+                        <td id="day4"></td>
+                        <td id="minmax4"></td>
+                        <td id="icones4"></td>
+                    </tr>
+                </table>
         </section>
     </main>
+    <footer>
+        Powered by <a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

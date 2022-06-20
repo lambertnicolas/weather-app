@@ -1,10 +1,18 @@
 
 const button = document.querySelector("#button");
+const start = document.querySelector("#start");
+const table = document.querySelector("table");
+
 
 //Appel de l'API
 async function openWeather() {
+    let city = localStorage.getItem('city');
+    start.style.display = "none";
+    table.style.display = "revert";
+
     //-----------------------Partie 1 : météo actuelle-----------------------//
     const inputCity = document.querySelector("input").value;
+    localStorage.setItem('city', inputCity);
     //Current weather
     let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=metric&lang=fr&appid=dca94a662c37a21638d24f844a65bd9f`);
     let result = await response.json();
@@ -52,7 +60,7 @@ async function openWeather() {
     let forecastResult = await responseForecast.json();
     let MainArray = Object.values(forecastResult);   
     let forecastArray = Object.values(MainArray[3]);
-
+    console.log(MainArray);
     //Affichage des jours
     function toLocaleUTCDateString(date, locales, options) {
         const tempsDiff = date.getTimezoneOffset() * 60000;
@@ -75,6 +83,10 @@ async function openWeather() {
         day.textContent = jour;
         newDiv.appendChild(day);
         forecastSection.appendChild(newDiv);
+
+        //Affichage des prévisions dans le tableau
+        const dayDisplay = document.querySelector(`#day${i}`);
+        dayDisplay.appendChild(day);
     }
 
     //Affichage Forecast
@@ -83,6 +95,7 @@ async function openWeather() {
     const tomorrow = new Date(today)
     tomorrow.setDate(tomorrow.getDate() + 1)
     //demain 2h00 pour gmt+2
+    console.log(array);
     tomorrow.setHours(2,0,0,0)
     //msTomorrow = millisecondes du jour suivant à 0h00
     let msTomorrow = Date.parse(tomorrow);
@@ -111,15 +124,15 @@ async function openWeather() {
             }
         }   
     });
-    let day1Display = document.querySelector(".day1")
-    let tempDay1 = document.createElement("p")
-    tempDay1.innerHTML = 
+    let day1Display = document.querySelector("#minmax1");
+    day1Display.innerHTML = 
     `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
-    <span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span> <br
-    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`
-    day1Display.append(tempDay1);
+    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`;
+    let forecastIcons = document.querySelector("#icones1");
+    forecastIcons.innerHTML = `<span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
+
 
     //Prévision jour 2/////////////////////////////////
     icones = [];
@@ -138,15 +151,13 @@ async function openWeather() {
             }
         }   
     });
-    let day2Display = document.querySelector(".day2")
-    let tempDay2 = document.createElement("p")
-    tempDay2.innerHTML = 
-    `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
-    <span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span> <br
-    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`
-    day2Display.append(tempDay2);
+    let day2Display = document.querySelector("#minmax2");
+    day2Display.innerHTML = `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
+    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`;
+    let forecastIcons2 = document.querySelector("#icones2");
+    forecastIcons2.innerHTML = `<span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
 
     //Prévision jour 3/////////////////////////////////
     icones = [];
@@ -165,15 +176,13 @@ async function openWeather() {
             }
         }   
     });
-    let day3Display = document.querySelector(".day3")
-    let tempDay3 = document.createElement("p")
-    tempDay3.innerHTML = 
-    `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
-    <span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span> <br
-    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`
-    day3Display.append(tempDay3);
+    let day3Display = document.querySelector("#minmax3");
+    day3Display.innerHTML = `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
+    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`;
+    let forecastIcons3 = document.querySelector("#icones3");
+    forecastIcons3.innerHTML = `<span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
 
     //Prévision jour 4/////////////////////////////////
     icones = [];
@@ -192,15 +201,13 @@ async function openWeather() {
             }
         }   
     });
-    let day4Display = document.querySelector(".day4")
-    let tempDay4 = document.createElement("p")
-    tempDay4.innerHTML = 
-    `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
-    <span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> <br>
-    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span> <br
-    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`
-    day4Display.append(tempDay4);
+    let day4Display = document.querySelector("#minmax4");
+    day4Display.innerHTML = `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
+    <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`;
+    let forecastIcons4 = document.querySelector("#icones4");
+    forecastIcons4.innerHTML = `<span id="ico"><img src="src/img/${icones[3]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> 
+    <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
     ///////////////////////////////////////////////////////////////////////
 
 

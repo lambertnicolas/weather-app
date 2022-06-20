@@ -1,175 +1,182 @@
 body {
     background-image: linear-gradient(to bottom, #00C0FF, #4e19dd);
-    // background-image: url('../img/brussel-958408_1920.jpg');
     // background-position: center;
     // background-size: cover;
-    section {
-        &#search {
-            height: 20vh;
-            margin-bottom: 2vh;
-            form {
-                display: flex;
-                background-color: #4a3c71;
-                height: 100%;
-                justify-content: center;
-                div {
+    main {
+        section {
+            margin:0 auto;
+            max-width: 600px;
+            &#search {
+                height: 20vh;
+                margin-bottom: 2vh;
+                form {
                     display: flex;
-                    width:90%;
-                    height: 40%;
-                    background-color: #e8f0fe;
-                    margin: auto;
-                    border-radius: 10px;
-                    input {
-                        &#input {
-                            width:100%;
-                            height: 94%;
-                            border-radius: 10px;
-                            border: none;
-                            padding-left:5px;
-                            color:rgb(34, 34, 34);
-                            background:rgb(106, 106, 106, 0);
-                        }
-                        &#input:focus {
-                            border: none;
-                            outline: none;
-                        }
-                    }
-                    &#button {
+                    background-color: #4a3c71;
+                    height: 100%;
+                    justify-content: center;
+                    div {
+                        display: flex;
+                        width:90%;
+                        height: 40%;
+                        background-color: #e8f0fe;
+                        margin: auto;
                         border-radius: 10px;
-                        width:50px;
-                        border-style: none;
-                        font-size: 30px;
-                        font-weight: bold;
-                        text-align: center;
-                        padding-left:10px;
-                        position: relative;
-                        i {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
+                        @media screen and(min-width: 640px) {
+                            max-width: 600px;
+                        }
+                        input {
+                            &#input {
+                                width:100%;
+                                height: 94%;
+                                border-radius: 10px;
+                                border: none;
+                                padding-left:5px;
+                                color:rgb(34, 34, 34);
+                                background:rgb(106, 106, 106, 0);
+                            }
+                            &#input:focus {
+                                border: none;
+                                outline: none;
+                            }
+                        }
+                        &#button {
+                            border-radius: 10px;
+                            width:50px;
+                            border-style: none;
+                            font-size: 30px;
+                            font-weight: bold;
+                            text-align: center;
+                            padding-left:10px;
+                            position: relative;
+                            i {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
                         }
                     }
                 }
             }
-        }
-        &#display {
-            height:15vh;
-            display: flex;
-            div {
-                width:100%;
-                text-align: center;
-                &#degre {
-                    width:60%;
-                    span {
-                        &#temp {
-                            color:white;
-                            text-shadow: 2px 2px 3px rgb(70, 70, 70);
-                            font-size: 80px;
-                            font-family: 'Quicksand', sans-serif;
-                            font-weight: bolder;
+            &#display {
+                height:15vh;
+                display: flex;
+                max-width: 600px;
+                div {
+                    width:100%;
+                    text-align: center;
+                    &#degre {
+                        width:60%;
+                        span {
+                            &#temp {
+                                color:white;
+                                text-shadow: 2px 2px 3px rgb(70, 70, 70);
+                                font-size: 80px;
+                                font-family: 'Quicksand', sans-serif;
+                                font-weight: bolder;
+                            }
                         }
                     }
-                }
-                &#visuel {
-                    width:40%;
-                    span {
-                        &#weatherDescription {
-                            color:white;
-                            text-shadow: 2px 2px 3px rgb(70, 70, 70);
-                            font-size: 20px;
-                            font-family: 'Quicksand', sans-serif;
+                    &#visuel {
+                        width:40%;
+                        span {
+                            &#weatherDescription {
+                                color:white;
+                                text-shadow: 2px 2px 3px rgb(70, 70, 70);
+                                font-size: 20px;
+                                font-family: 'Quicksand', sans-serif;
+                            }
                         }
                     }
                 }
             }
-        }
-        &#info {
-            height:10vh;
-            display: flex;
-            flex-direction: column;
-            span {
-                color:white;
-                margin-left : 5%;
+            &#info {
+                height:10vh;
+                display: flex;
+                flex-direction: column;
+                span {
+                    color:white;
+                    margin-left : 5%;
+                    font-family: 'Quicksand', sans-serif;
+                }
+            }
+            &#forecast {
+                height: 50vh;
                 font-family: 'Quicksand', sans-serif;
-            }
-        }
-        &#forecast {
-            height: 53vh;
-            font-family: 'Quicksand', sans-serif;
-            color:white;
-            div {
-                height:50px;
-                border-right: 1px solid white;
-                width:100%;
-                text-align: center;
-                h3 {
-                    margin-bottom: 10px;
-                }
-                &.day1{
-                    span {
-                        &#min {
-                            font-size: 14px;
-                            margin-bottom: 5px;
-                        }
-                        &#max {
-                            font-size: 15px;
-                        }
-                        &#ico {
-                            img{
-                                width:40px;
-                            }
-                        }
+                color:white;
+                max-width: 600px;
+                div {
+                    font-family: 'Quicksand', sans-serif; ;
+                    h1{
+                       font-size: 50px; 
+                       text-align: center;
+                       font-weight:bolder;
+                       margin-bottom: 30px;
+                    }
+                    p {
+                        text-align: center;
+                        width: 80%;
+                        margin: 0 auto;
                     }
                 }
-                &.day2{
-                    span {
-                        &#min {
-                            font-size: 14px;
+                table {
+                    height:50px;
+                    width:100%;
+                    text-align: center;
+                    display: none;
+                    tbody{
+                        width:100%;
+                    tr {
+                        border-bottom: 1px rgb(146, 179, 208) solid;
+                        height:60px;
+                        &#th {
+                            height: 30px;
                         }
-                        &#max {
-                            font-size: 15px;
-                        }
-                        &#ico {
-                            img{
-                                width:40px;
+                        td {
+                            padding-top: 10px;
+                            &#hours {
+                                display: flex;
+                                justify-content: space-evenly;
+                            }
+                            &#day1, &#day2, &#day3, &#day4 {
+                                vertical-align:top;
+                                font-weight: 600;
+                            }
+                            &#icones1, &#icones2, &#icones3, &#icones4 {
+                                display: flex;
+                                justify-content: space-evenly;
+                                span{
+                                    img{
+                                        width:50px;
+                                    }
+                            }
+                            }
+                            &#minmax1, &#minmax2, &#minmax3, &#minmax4{
+                                vertical-align: top;
+                                text-align: center;
                             }
                         }
+                    } 
+                }  
+                    h3 {
+                        margin-bottom: 10px;
                     }
-                }
-                &.day3{
-                    span {
-                        &#min {
-                            font-size: 14px;
-                        }
-                        &#max {
-                            font-size: 15px;
-                        }
-                        &#ico {
-                            img{
-                                width:40px;
-                            }
-                        }
                     }
-                }
-                &.day4{
-                    border: none;
-                    span {
-                        &#min {
-                            font-size: 14px;
-                        }
-                        &#max {
-                            font-size: 15px;
-                        }
-                        &#ico {
-                            img{
-                                width:40px;
-                            }
-                        }
-                    }
-                }
-                }
 
+                }
             }
+    }
+    footer {
+        height:3vh;
+        font-size: 10px;
+        text-align: right;
+        vertical-align:bottom;
+        color:white;
+        font-family: 'Quicksand', sans-serif;
+        margin-right: 10px;
+        a {
+            text-decoration: none;
+            color:white;
         }
+    }
 }
