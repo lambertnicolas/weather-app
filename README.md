@@ -14,11 +14,15 @@ A faire :
 
 ## Rendu
 - Page d'accueil :
+
+
 ![Smartphone picture](src/img/smart.jpg)
 ![tablet picture](src/img/tab.jpg)
 ![screen picture](src/img/screent.jpg)
 
 - Détail :
+
+
 ![Smartphone picture](src/img/smart_01.jpg)
 ![tablet picture](src/img/tab_01.jpg)
 ![screen picture](src/img/screent_01.jpg)
