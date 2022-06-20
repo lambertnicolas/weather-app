@@ -18,7 +18,7 @@ A faire :
 
 ![Smartphone picture](src/img/smart.jpg)
 ![tablet picture](src/img/tab.jpg)
-![screen picture](src/img/screent.jpg)
+![screen picture](src/img/screen.jpg)
 
 - Détail :
 
