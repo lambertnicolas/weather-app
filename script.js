@@ -114,11 +114,11 @@ async function openWeather() {
         if(time >= msTomorrow && time < dayAfter){
             //Récupérer les icônes
             icones.push(element.weather[0].icon);
-            //Récupérer de la température maximale      
+            //Récupérer la température maximale      
             if(element.main.temp_max > tempMax){
             tempMax = element.main.temp_max;
             }
-            //Récupérer de la température minimale      
+            //Récupérer la température minimale      
             if(element.main.temp_min < tempMin){
             tempMin = element.main.temp_min;
             }
@@ -135,17 +135,19 @@ async function openWeather() {
 
 
     //Prévision jour 2/////////////////////////////////
+    tempMax = -100;
+    tempMin = 100;
     icones = [];
     forecastArray.forEach((element, index) => {
         let time = element.dt*1000;
         if(time >= (msTomorrow+msDay) && time < (dayAfter+msDay)){
             //Récupérer les icônes
             icones.push(element.weather[0].icon);
-            //Récupérer de la température maximale      
+            //Récupérer la température maximale      
             if(element.main.temp_max > tempMax){
             tempMax = element.main.temp_max;
             }
-            //Récupérer de la température minimale      
+            //Récupérer la température minimale      
             if(element.main.temp_min < tempMin){
             tempMin = element.main.temp_min;
             }
@@ -160,17 +162,19 @@ async function openWeather() {
     <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
 
     //Prévision jour 3/////////////////////////////////
+    tempMax = -100;
+    tempMin = 100;
     icones = [];
     forecastArray.forEach((element, index) => {
         let time = element.dt*1000;
         if(time >= (msTomorrow+(msDay*2)) && time < (dayAfter+(msDay*2))){
             //Récupérer les icônes
             icones.push(element.weather[0].icon);
-            //Récupérer de la température maximale      
+            //Récupérer la température maximale      
             if(element.main.temp_max > tempMax){
             tempMax = element.main.temp_max;
             }
-            //Récupérer de la température minimale      
+            //Récupérer la température minimale      
             if(element.main.temp_min < tempMin){
             tempMin = element.main.temp_min;
             }
@@ -185,22 +189,25 @@ async function openWeather() {
     <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
 
     //Prévision jour 4/////////////////////////////////
+    tempMax = -100;
+    tempMin = 100;
     icones = [];
     forecastArray.forEach((element, index) => {
         let time = element.dt*1000;
         if(time >= (msTomorrow+(msDay*3)) && time < (dayAfter+(msDay*3))){
             //Récupérer les icônes
             icones.push(element.weather[0].icon);
-            //Récupérer de la température maximale      
+            //Récupérer la température maximale      
             if(element.main.temp_max > tempMax){
             tempMax = element.main.temp_max;
             }
-            //Récupérer de la température minimale      
+            //Récupérer la température minimale      
             if(element.main.temp_min < tempMin){
             tempMin = element.main.temp_min;
             }
         }   
     });
+   
     let day4Display = document.querySelector("#minmax4");
     day4Display.innerHTML = `<span id="min">Min : ${tempMin.toFixed(1)}°c</span> <br>
     <span id="max">Max : ${tempMax.toFixed(1)}°c</span>`;
@@ -209,9 +216,6 @@ async function openWeather() {
     <span id="ico"><img src="src/img/${icones[4]}.png" alt=""></span> 
     <span id="ico"><img src="src/img/${icones[6]}.png" alt=""></span>`;
     ///////////////////////////////////////////////////////////////////////
-
-
-
 }
 
 
