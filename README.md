@@ -23,9 +23,9 @@ A faire :
 - Détail :
 
 
-![Smartphone picture](src/img/smart_01.jpg)
-![tablet picture](src/img/tab_01.jpg)
-![screen picture](src/img/screent_01.jpg)
+![Smartphone picture](src/img/smart_1.jpg)
+![tablet picture](src/img/tab_1.jpg)
+![screen picture](src/img/screen_1.jpg)
 
 
 
