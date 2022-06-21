@@ -26,7 +26,7 @@ Enfin, pour les 4 prochains jours, les températures minimales, maximales et la 
 
 
 ## Lien
-Github page : [Lien]([https://example.com/](https://lambertnicolas.github.io/weather-app/) "ici").
+Github page : [ici](https://lambertnicolas.github.io/weather-app/)
 
 ## A faire :
 
